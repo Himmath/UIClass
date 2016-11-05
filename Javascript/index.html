@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" >
+	<title> Validation.js</title>
+	<link rel="stylesheet"  href="file.css" >
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div  id="wrapper">		
+		<div id="formbody">
+			<div class="formtext">
+				<h1>Faculty Vacation Request Form</h1>
+				<form id="vacation" name="vacation" class="vacations">
+					Employee ID:<input type="text" name="id"/>
+					<span id="errid" class="error" >This is required</span><br/>
+					Faculty Name:<input type="text" name="fname" id="fname"/>
+					<span id="errname" class="error">This is required</span><br/>
+					
+					Gender:<input type="radio" name="gender" value="male"/>Male
+					<input type="radio" name="gender" value="female"/>Female
+					<span id="errgen" class="error">This is required</span><br/>
+					Nationality:<input type="text" name="nation"> <br>
+					Position*:
+					<select name="position" value="position">
+						<option value="default"></option>
+						<option value="Lec">Lec</option>
+						<option value="Asst">Asst</option>
+						<option value="Assoc">Assoc</option>
+						<option value="Prof">Prof</option>
+					</select>
+					<span class="error" id="errpos">This is required</span><br>
+					<input type="button" value="submit" onclick="return validate();">
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
