@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+	</head>
+	<body>
+	<div>This is div 1</div> 
+	<div>This is div 2</div>
+	<div>This is div 3</div>
+	<div>This is div 4</div>
+	<p>This is para 1</p>
+	<p>This is para 2</p>
+	<p>This is para 3</p>
+	<p>This is para 4</p>
+	</body>
+	<script>
+		document.getElementsByTagName('div')[0].addEventListener('click',function(event){
+			console.log('you have clicked on div')
+		})
+		for (var i=0; i< document.getElementsByTagName('div').length;i++){
+		document.getElementsByTagName('div')[i].addEventListener('click',function(event){
+			console.log('you have clicked on div')
+		})
+
+		}
+
+	</script>
+	<script>
+		for (var i=0; i< document.getElementsByTagName('div').length;i++){
+		document.getElementsByTagName('div')[i].addEventListener('click',function(event){
+			console.log(event.target)
+		})
+
+		}
+	</script>
+	<script>
+	
+		// for (var i=0; i< document.getElementsByTagName('div').length;i++){
+		// document.getElementsByTagName('div')[i].addEventListener('click',function(event){
+		// 	console.log(event.target.innerHTML)
+		// })
+
+		// }
+		
+		document.addEventListener('click', function(event){
+			if(event.target.tagName==='DIV'){
+				console.log(event.target.innerHTML);
+			}
+
+		})
+		
+	</script>
+	
+</html>

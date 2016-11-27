@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js</title>
+	</head>
+	<body>
+		<script>
+			var lastname  =  'Global variable';
+			var obj = {
+				lastname : 'local variable',
+				getLastName : function(){
+					return this.lastname;
+				}
+			}
+
+			console.log(obj.getLastName());
+			var newFunc = obj.getLastName;
+			console.log(newFunc.call(obj));
+			console.log(newFunc.call({lastname:'java'}));
+			console.log(newFunc.apply({lastname:'ASP.NET'}));
+			function multiply(a,b) {
+				return this.c * this.d * a * b;
+			}
+			var obj2 = {c : 3, d :4}
+			console.log(multiply.call(obj2, 2, 5));
+			console.log(multiply.apply(obj2, [2,5]));
+
+			var newMul = multiply.bind(obj2);
+			console.log(newMul(2,3));
+
+
+		</script>
+	</body>
+</html>

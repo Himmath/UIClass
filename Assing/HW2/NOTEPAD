@@ -1,0 +1,44 @@
+truthy value
+	
+	true
+	all other numbers expect 0
+	'str' --> not empty string
+	{}
+	[]
+
+falsy value
+	
+	false
+	0
+	''
+	undefined
+	null
+
+
+logical and 
+
+	--> exp1 && exp2
+
+	--> exp1 is returned if exp1 is a falsy value, else exp2 is returned
+
+logical or
+
+	--> exp1 || exp2
+
+	--> exp1 is returned if exp1 is a truthy value, else exp2 is returned
+
+isArray() --> method to identify if the varible is an array
+
+length --> it will let you know whats the length of the array
+
+push() --> adding the item at the end of the array
+
+pop() --> remove the item from the end of array
+
+unshift() --> add an item in the starting of the array
+
+shift() --> remove the item for the starting of the array
+
+indexOf(item) -- first occurance of specific value
+
+lastIndexOf(item) -- last occurance of specific value.

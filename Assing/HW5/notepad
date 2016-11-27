@@ -1,0 +1,13 @@
+functionName.call(ObjName)--> you are forcefully replacing the value of 'this' keyword with ObjName
+
+functionName.apply(ObjName)--> you are forcefully replacing the value of 'this' keyword with ObjName
+
+call --> you may pass the parameters as comma seperated values
+
+apply --> you may pass the paramters as an array.
+
+.bind(this)-->
+
+both call and apply --> will execute the function immediately
+
+.bind(objName) // we are creating a new function, permanently we are changing the value of this keyword to objName

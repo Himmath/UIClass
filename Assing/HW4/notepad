@@ -1,0 +1,22 @@
+using new functionName() --> we would able to create objects
+
+
+			
+prototype 
+-- is a single object, which would be the same across all the object which has been created out of the function 
+
+instanceof
+
+p3.getName();
+
+	this keyword in getName() --> refers to p3
+
+objectName.functionName() 
+	--> in this function -- "functionName" -- this keyword would refer to objectName
+
+func1()
+	--> this keyword in func1 --> will refer to window.
+
+window.func2()
+	--> this keyword in func2 --> will refer to window.
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Js</title>
+	</head>
+	<body>
+		<div>THis is div 1 </div>
+		<div id = "divId" class = "class1" >This is div 2 </div>
+		<div>THis is div 3</div>
+		<div>THis is div 4</div>
+		<div id = "divId" class = "class1 class2">This is div5 </div>
+		<div class = "class2">This is div 6</div>
+		<div>THis is div 7</div>
+		<p class="class2">This is para 1 </p>
+		<p>This is para 2</p>
+		<p  class="class1">This is para 3 </p>
+		<p>This is para 4</p>
+		<p class="class1">This is para 5 </p>
+		
+		<p id="divId">This is para 6 </p>
+		<script>
+		console.log(document.getElementsByTagName('div'));
+		console.log(document.getElementsByTagName('p'));
+		console.log(document.getElementById('divId'));
+		console.log(document.getElementsByClassName('class1'));
+		console.log(document.getElementsByClassName('class2'));
+		console.log(document.querySelectorAll('div'));
+		console.log(document.querySelectorAll('p'));
+		console.log(document.querySelectorAll('.class1'));
+		console.log(document.querySelectorAll('.class2'));
+		console.log(document.querySelectorAll('#divId'));
+		console.log(document.querySelectorAll('div.class2'));
+		console.log(document.querySelectorAll('div.class1'));
+		console.log(document.querySelectorAll('div#divId'));
+		console.log(document.querySelectorAll('p.class2'));
+		console.log(document.querySelectorAll('div#divId.class1'));
+		console.log(document.querySelectorAll('div.class1.class2'));
+		</script>
+		
+	</body>
+</html>

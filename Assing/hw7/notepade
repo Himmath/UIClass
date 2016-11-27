@@ -1,0 +1,30 @@
+event.target ---> reference to the element where you might have performed the action.
+
+event.target.innerHTML ---> html inside it we can have a reference.
+
+
+
+
+captureFlag 
+	--> not given --> event bubling by default
+	--> false --> event bubling
+	--> true --> event capturing
+
+event propagation: 
+
+suppose if you have a parent and child element. if you are trying to listen same eventType on both elements. 
+
+if you clicked(event performed) then event propagation will happen.
+
+--> event bubling --> child event handler is invoked first, parent event handler is invoked next
+
+--> event capturing --> parent event handler is invoked first, child event handler is invoked next
+
+event.stopPropagation
+	-- when clicked on chid element
+		-- in case of bubling -- child event handler is only invoked 
+		-- in case of capturing -- parent event handler is only invoked
+
+
+event.stopImmediatePropagation()
+	-- this will the last event handler that will be invoked.

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+	</head>
+	<body>
+		<script>
+			function func1(){
+			}
+			var a = new func1();
+			console.log(' type of a is' + (typeof a));
+			console.log(a);
+			function person (na,ag){
+				this.name = na;
+				this.age = ag;
+			}
+			var p1 = new person('ram',34);
+				var p2 = new person('raghu',23);
+			console.log(p1);
+			console.log(p2);
+			console.log(p1.name);
+			person.prototype.nation='citizen';
+			p3 ={
+				firstname : 'john',
+				lastname : 'son',
+				address : '123',
+				state : 'ca',
+				zip : '1545',
+			
+			getName : function(){
+				return this.firstname + '  ' + this.lastname;
+				}
+			}
+			console.log(p3.getName());
+
+			function func2(){
+				console.log(this);
+			}
+				console.log(this);		 
+		</script>
+	</body>
+</html>

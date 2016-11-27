@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+		p{
+			border: 2px solid blue;
+		}
+		div{
+			border: 2px solid red;
+		}
+		</style>
+	</head>
+	<body>
+		<div id ="divId">
+			This is parent element
+			<p id="paraId">This is a para child element</p>
+		</div>
+		<script>
+			document.getElementById('paraId').addEventListener('click', function  (event){
+				event.stopImmediatePropagation()
+				//event.stopPropagation()
+				console.log('child event handler invoked 1')
+			})
+			document.getElementById('paraId').addEventListener('click', function  (event){
+				//event.stopPropagation()
+				console.log('child event handler invoked 2')
+			})
+			document.getElementById('paraId').addEventListener('click', function  (event){
+				//event.stopPropagation()
+				console.log('child event handler invoked 3')
+			})
+			document.getElementById('paraId').addEventListener('click', function  (event){
+				//event.stopPropagation()
+				console.log('child event handler invoked 4')
+			})
+			document.getElementById('divId').addEventListener('click',function (event) {
+				console.log('parent event handler invoked')
+				//event.stopPropagation()
+				})
+			
+			
+		</script>
+	</body>
+</html>

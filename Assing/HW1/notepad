@@ -1,0 +1,46 @@
+
+
+
+Operator precedence
+
+The order in which operators are evaluated in an expression is referred to as operator precedence.
+Operator precedence describes the order in which operations are performed when an expression is evaluated. Operations with a higher precedence are performed before those with a lower precedence.
+
+()	Method/function call, grouping	Left to right	Highest — 1
+[]	Array access	Left to right	1
+.	Object property access	Left to right	1
+++	Increment	Right to left	2
+--	Decrement	Right to left	2
+
+
+==
+ 	compares value only
+
+ ===
+ 	compares value and data type
+
+
+ !=
+ 	compares values only
+ 	opposite to == 
+
+ !==
+ 	compares value and data type
+ 	opposite to ===
+
+
+undefined -- indicate you have defined a variable and not assigned a value. 
+			--i have not touched this value
+
+null -- suppose of you intentionally not clear all values, and indicate that. they we try to use null.
+		-- i have touched this value and intentionally made blank 
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+arr.forEach(function(item, index, arr) {
+	
+})
+	--> in for Each the function is executed for each item in the array 
+	--> item --> item in an array
+	--> index --> index of this item
+	--> arr --> this the complete array.
+
+arr.map(function(item, index, arr) {
+	
+})
+	 in for Each the function is executed for each item in the array 
+	 item --> item in an array
+	 index --> index of this item
+	 arr --> this the complete array.
+
+	--> additionaly --> it creates a new array out of returned values from within the map.
+
+ key and value:
+	key value pair--> key and value are seperated by :
+	--> key will always be a string 
+	--> properties are seperated by a ,
+	--> values --> can be any java script data types
+
+
+	how to check if a property key(name) exists ?
+		--> objectName.hasOwnProperty('propertyKey')
+			 --> if true --> propertyKey exists
+			 --> if false --> propertyKey doesnot exist on the object.
+
+	how to add a property ?
+		--> objName.newPropertyKey = "value";
+		--> objName['newPropertyKey'] = "value";
+
+	how to update an existing property value?
+		--> objName.existingPropertyKey = "value";
+		--> objName['existingPropertyKey'] = "value";
+
+	how to read a property value
+		--> objName.existingPropertyKey
+		--> objName['existingPropertyKey']
+
+	how to delete a property value
+		--> delete objName.existingPropertyKey
+		--> delete objName['existingPropertyKey']	
+
+

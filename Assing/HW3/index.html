@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+	</head>
+	<body>
+		<script>
+			var arr = ['hello','everyone','how','are','you','doing'];
+			// arr.forEach( function(item, index,arr) {
+				// 	console.log('At index : ' + index + ' item is :' + item + ' complete array : '+ arr)
+			//});
+			//var arr2 = ['himmath','arjun','kuchipudi','sai','vinesh','ram']
+			var arr2 = arr.map( function(item, index,arr) {
+				return item + ' At index :' + index ;
+			})
+			console.log(arr2);
+		</script>
+		<script>
+			var obj = {
+				firstname : 'java',
+				lastname : 'j2EE',
+				gender :'M',
+				attendence : '90.2',
+				graduated : 'yes',
+				address : 'xyz' ,
+			}
+
+		console.log(obj.hasOwnProperty('lastname'));
+		console.log(obj.hasOwnProperty('age'));
+		console.log(obj.hasOwnProperty('address'));
+		console.log(obj.hasOwnProperty('weight'));
+		console.log(obj.age='25');
+		console.log(obj.weight='200');
+		console.log(obj.zip='1234');
+		console.log(obj.gender='f');
+		console.log(obj);
+		console.log(obj.address);
+		console.log(obj.lastname);
+		delete obj.firstname;
+		delete obj.gender;
+		delete obj.attendence;
+		delete obj.address;
+		console.log(obj)
+
+
+
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+	</head>
+	<body>
+		<div onclick="func1()">This is div 1</div>
+		<div oncontextmenu="func2()">This is div2</div>
+		<div ondblclick="func3()">This is div3</div>
+		<div id="divId">This is div4</div>
+	</body>
+	<script>
+		function func1() {
+			//event.stopPropagation()
+			console.log('you have cliked on div1')
+		}
+		function func2(){
+			event.stopPropagation()
+			console.log('you have right clicked on div2')
+		}
+		function func3(){
+			console.log('you have double click on div3')
+		}
+		document.getElementById('divId').addEventListener('click',function(){
+			console.log('you clicked on div4 with divId');
+		})
+		document.getElementById('divId').addEventListener('contextmenu',function(){
+			console.log('you right clicked on div4 with divId');
+		})
+		
+	</script>
+</html>

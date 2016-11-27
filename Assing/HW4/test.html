@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var firstName = 'global variable';
+			var obj = {
+				firstName : "java script",
+				getName : function() {
+					return this.firstName; 
+				}
+			}
+			console.log(obj.getName()); 
+			var newFunc = obj.getName; 
+			console.log(newFunc()); 
+		</script>
+	</body>
+</html>
