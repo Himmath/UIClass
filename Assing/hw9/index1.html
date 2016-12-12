@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js</title>
+	</head>
+	<body>
+		<div ng-app='myApp'>
+			<div ng-controller='FirstCtrl'>
+				<div ng-repeat='item in arr'>{{item}}</div>
+				<table>
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Age</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat='item in arr2'>
+							<td>{{item.firstName}}</td>
+							<td>{{item.lastName}}</td>
+							<td>{{item.age}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp',[]);
+			angular.module('myApp').controller('FirstCtrl',['$scope',function($scope){
+				$scope.arr = ['hi','every','one','how','are','you','today'];
+				$scope.arr2 =[
+					{
+						firstName : 'jhon',
+						lastName : 'wick',
+						age : 30,
+					},
+					{
+						firstName : 'jhon',
+						lastName : 'snow',
+						age : 27,
+					},
+					{
+						firstName : 'Imp',
+						lastName : 'dwraf',
+						age : 65,
+					},
+					{
+						firstName : 'tyran',
+						lastName : 'lanister',
+						age : 45,
+					}
+				]
+			}])
+
+		</script>
+	</body>
+</html>

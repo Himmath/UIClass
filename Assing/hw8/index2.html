@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Js</title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="FirstCtrl">
+				My First Name is : {{firstName}} <br/>
+			</div>
+			<div ng-controller="SecondCtrl">
+				My First Name is : {{firstName}} <br/>
+				<div ng-controller="ThirdCtrl">
+					My First Name is : {{firstName}} <br/>
+					My Last Name is : {{LastName}} <br/>
+					My Full name is : {{firstName}} {{LastName}} <br/>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp', []);
+			angular.module('myApp').controller('FirstCtrl', ['$scope', function($scope){
+				$scope.firstName='first name in FirstCtrl';
+			}] )
+			angular.module('myApp').controller('SecondCtrl', ['$scope', function($scope){
+				$scope.firstName='first name in SecondCtrl';
+			}] )
+			angular.module('myApp').controller('ThirdCtrl', ['$scope', function($scope){
+				$scope.LastName='last name in ThirdCtrl';
+			}] )
+		</script>
+	</body>
+</html>

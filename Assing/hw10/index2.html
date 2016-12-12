@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Service</title>
+	</head>
+	<body>
+		<div ng-app='myapp'>
+			<div ng-controller='FirstCtrl'>
+				
+			</div>
+			<div ng-controller='SecondCtrl'>
+				
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myapp',[]);
+			angular.module('myapp').controller('FirstCtrl', ['$scope', 'serv1', function($scope, serv1){
+				console.log(serv1.multiply(2,3));
+			}])
+			angular.module('myapp').controller('SecondCtrl', ['$scope', 'serv1', function($scope, serv1){
+				console.log(serv1.multiply(4,5));
+			}])
+			angular.module('myapp').service('serv1',function(){
+			this.multiply = function(a,b) {
+				return a*b;
+				}
+			})
+			
+		</script>
+	</body>
+</html>

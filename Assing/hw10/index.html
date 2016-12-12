@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Factory</title>
+	</head>
+	<body>
+		<div ng-app='myapp'>
+			<div ng-controller='FirstCtrl'>
+				My name is first ctrl : <input ng-model='data.firstName'>
+				My name is first ctrl : <input ng-model='data.lastName'>					
+			</div>
+			<div ng-controller='SecondCtrl'>
+				My name is last ctrl : <input ng-model='data2.firstName'>	
+				My name is last ctrl : <input ng-model='data2.lastName'>		
+
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script> 
+			angular.module('myapp',[]);
+			angular.module('myapp').controller('FirstCtrl', ['$scope', 'fac1', function($scope, fac1){
+			//	console.log('FirstName is : ' + fac1.firstName + '. LastName is : ' + fac1.lastName + '.')
+				//fac1.firstName = 'This is singleton';
+				$scope.data = fac1;
+			}])
+			angular.module('myapp').controller('SecondCtrl', ['$scope', 'fac1', function($scope, fac1){
+			//	console.log('FirstName is : ' + fac1.firstName + '. LastName is : ' + fac1.lastName + '.')
+				$scope.data2 = fac1;
+			}])
+		angular.module('myapp').factory('fac1',function(){
+			return {
+				firstName : 'Arrya',
+				lastName : 'Stark'
+			}
+		})
+		</script>
+	</body>
+</html>

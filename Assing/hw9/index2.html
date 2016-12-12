@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>filters</title>
+	</head>
+	<body>
+		<div ng-app='myApp'>
+			<div ng-controller='FirstCtrl'>
+				<input ng-model = 'searchTerm'>
+				<!-- <div ng-repeat='item in arr|limitTo: 2: 3'>{{item | uppercase}}</div> 
+					<div ng-repeat='item in arr'>{{item |limitTo: 2}}</div>
+					<div ng-repeat='item in arr | orderBy'>{{item}} </div>
+					<div ng-repeat='item in arr | filter:searchTerm'>{{item}} </div>-->
+					<div ng-repeat='item in arr | filter:searchTerm'>{{item | reverse}} </div>
+
+					The number value is : {{num | currency: 'INR' : 4}}
+					{{'hi every one' | reverse}}
+			</div>
+				
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp',[]);
+			angular.module('myApp').controller('FirstCtrl',['$scope',function($scope){
+				$scope.arr = ['hi','every','one','how','are','you','today'];
+				$scope.num = 100
+			}])
+			angular.module('myApp').filter('reverse',function(){
+				return function(data) {
+					if(data == '') {return data}
+						if(data) {
+							return data.split('').reverse().join('');
+
+						}
+				}
+			})
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js</title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			Enter the first name : <input ng-model="firstName"><br/>
+			show first name : <span ng-bind="firstName"></span>
+			<div ng-controller="FirstCtrl">
+				Enter the last name : <input ng-model="LastName"><br/>
+				show last name : <span ng-bind="LastName"></span><br/>
+				show first name : <span ng-bind="firstName"></span>
+			</div>
+			show last name : <span ng-bind="LastName"></span>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		
+		<script>
+			angular.module('myApp',[]);
+			angular.module('myApp').controller('FirstCtrl', function($scope){
+			})
+		</script>
+		
+	</body>
+</html>

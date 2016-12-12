@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Js</title>
+	</head>
+	<body>
+		<div ng-app='myApp'>
+			<div ng-controller='FirstCtrl'>
+				<dir1 flavor='pineapple'></dir1>
+				<dir1 flavor='apple'></dir1>
+				<dir1 flavor='mango'></dir1>
+				<dir1 flavor='grape'></dir1>
+				
+				
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp',[]);
+			angular.module('myApp').controller('FirstCtrl', function($scope){
+
+			})
+			angular.module('myApp').directive('dir1', function(){
+				return {
+					restrict : 'EAMC',
+					template :'<div>This is my frist directive, its name is dir1.</div>',
+					link : function(scope, element, attrs){
+						element.bind('click', function(){
+						//	alert('you have clicked on element dir1')
+						    console.log(attrs.flavor);
+						})
+					}
+
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>$http POST</title>
+	</head>
+	<body>
+		<div ng-app='myapp'>
+			<div ng-controller='FirstCtrl'></div>
+			<div ng-controller='SecondCtrl'>
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat = 'item in ajaxData track by $index'>
+							<td>{{item.name}}</td>
+							<td>{{item.age}}</td>
+							<td>{{item.id}}</td>
+							
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myapp',[]);
+			angular.module('myapp').controller('FirstCtrl', ['$scope', '$http', function($scope, $http){
+				var data = {
+					name : 'Arjun',
+					age : 35
+				}
+				$http({
+					url : 'http://rest.learncode.academy/api/johnbob/friends/',
+					method : 'POST',
+					data : data,
+				}).success(function(data){
+					$scope.ajaxData = data;
+					console.log('success : ',data);
+				}).error(function(xhr){
+					console.log('error : ', xhr);
+				})
+			}])
+			angular.module('myapp').controller('SecondCtrl', ['$scope', '$http', function($scope, $http){
+				$http({
+					url : 'http://rest.learncode.academy/api/johnbob/friends/',
+					method : 'GET'
+				}).success(function(data){
+					$scope.ajaxData = data;
+					console.log('success : ',data);
+				}).error(function(xhr){
+					console.log('error : ', xhr);
+				})
+			}])
+			
+			
+			
+		</script>
+	</body>
+</html>
