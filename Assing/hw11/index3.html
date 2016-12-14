@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<header>This is a header</header>
+			<div ng-controller="FirstCtrl">
+				<ng-view></ng-view>
+			</div>
+			<footer>This is a footer</footer>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+		<script>
+			angular.module('myApp', ['ngRoute']);
+			// any changes to provider has to be done in config method. 
+			angular.module('myApp').config(['$routeProvider',function($routeProvider) {
+				// registering roiutes /, /about, /contact, ... anyothers --> /
+				$routeProvider
+					.when('/', {
+						template: 'This is a home route'
+					})
+					.when('/about', {
+						template: 'This is a about route'
+					})
+					.when('/contact', {
+						template: 'This is a contact route'
+					})
+					.otherwise({
+						redirectTo : '/'
+					})
+			}])
+			angular.module('myApp').controller('FirstCtrl', function($scope){
+
+			})
+		</script>
+	</body>	
+</html>

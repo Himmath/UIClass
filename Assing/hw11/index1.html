@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="FirstCtrl">
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp', []); 
+			angular.module('myApp').controller('FirstCtrl', ['$scope','$q', function($scope, $q){
+				var defer = $q.defer();
+				
+				console.log(1);
+				defer.reject();
+				defer.resolve();
+				console.log(3);
+				console.log(4);
+				defer.promise.then(function(data){
+					console.log('the promise has been resolved');
+					console.log(2);
+				}, function(xhr){
+					console.log('this promise is rejected');
+				})
+			}])
+		</script>
+	</body>	
+</html>

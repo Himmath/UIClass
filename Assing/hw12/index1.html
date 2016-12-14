@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Singlepage App,ng-Route</title>
+	</head>
+	<body>
+		<div ng-app = 'myApp'>
+			<div>This is header</div>
+			<a ng-href="#/main">main</a>
+			<a ng-href="#/about">about</a>
+			<a ng-href="#/contact">contact</a>
+			<div ng-view></div>
+			<div>This is footer</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+		<script>
+		angular.module('myApp',['ngRoute'])
+		angular.module('myApp').config(['$routeProvider',function ($routeProvider) {
+			$routeProvider
+				.when('/main', {
+					controller : 'MainCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				.when('/about', {
+					controller : 'AboutCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				.when('/contact', {
+					controller : 'ContactCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				.otherwise({
+					redirectTo :'/main'
+				})
+		}])
+		angular.module('myApp').controller('MainCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in Main Controller'
+			$scope.message = 'This meassage in Main Controller'
+		}])
+		angular.module('myApp').controller('AboutCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in About Controller'
+			$scope.message = 'This meassage in About Controller'
+		}])
+		angular.module('myApp').controller('ContactCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in Contact Controller'
+			$scope.message = 'This meassage in Contact Controller'
+		}])
+		</script>
+	</body>
+</html>

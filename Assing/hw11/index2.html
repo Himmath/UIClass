@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="FirstCtrl">
+			</div>
+		</div>
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script>
+			angular.module('myApp', []);
+			angular.module('myApp').controller('FirstCtrl', ['$scope','serv1', function
+		($scope,serv1){
+				serv1.method1().then(function(data){
+					console.log('the promise has been resolved');
+					console.log(2);
+				}, function(xhr){
+					console.log('this promise is rejected');
+				});
+			}])
+			angular.module('myApp').controller('SecondCtrl', ['$scope','serv1', function
+		($scope, serv1){
+				serv1.method1().then(function(data){
+					console.log('the promise has been resolved');
+					console.log(2);
+				}, function(xhr){
+					console.log('this promise is rejected');
+				});
+			}])
+			angular.module('myApp').service('serv1', ['$q','$http', function($q,$http){
+				this.method1 = function() {
+					var defer = $q.defer();
+					$http({
+						// provided rest web service url
+						url :
+		'http://rest.learncode.academy/api/johnbob/friends/',
+						// we have provided the http methods
+						method : 'GET'
+						// if its a success invoke the method below.
+					}).success(function(data) {
+						// create a new modle $scope.ajaxData and asigning a value response from ajax
+						defer.resolve(data)
+					}).error(function(xhr){
+						defer.reject(xhr);
+					})
+					return defer.promise;
+				}
+			}])
+		</script>
+	</body>
+</html>

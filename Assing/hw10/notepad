@@ -1,0 +1,59 @@
+factory 
+	-- we use a return keyword
+	-- we can return any javascrit data type
+	-- return any java script data type (object, number, undefined, boolean, ..., function).
+	-- we can inject factories into controller
+
+	Factory is a singleton. 
+	singleton --> only one object through out the entire application.
+	-- suppose if you change the property on a factory. It would reflected in all the places you using it.
+
+	-- syntax 
+		angular.module('myApp').factory('fac1', function() {
+			return {
+				firstName : 'Jhon', 
+				lastName : 'bob'
+			}
+		})
+		-- we can inject factory into a controller
+		angular.module('myApp').controller('FirstCtrl', ['$scope', 'fac1', function($scope, fac1){
+				$scope.data = fac1;
+			}])
+
+	
+Service
+	-- singleton --> only one object through out the entire application.
+	-- we dont have to use a return keyword.
+	-- Service can only provide a Object.
+	-- its is instatiated once. its uses new keyword internally for the first time.
+	-- suppose if you want to define any helper methods.
+	-- if same piece of functionality is needed in multiple controller. Better put it in a service and make it available in the needed controllers. 
+	-- inbuilt services which angular provides, $http, $q, ...........
+		http://www.techstrikers.com/AngularJS/angularjs-built-in-services.php
+	-- syntax 
+		angular.module('myApp').service('serv1', function() {
+			this.multiply = function(a,b) {
+				return a*b;
+			}
+		});
+
+	-- service can be created using a factory, using the below sytax.
+
+	angular.module('myApp').factory('serv1', 
+		return new function() {
+			this.multiply = function(a,b) {
+				return a*b;
+			}
+		}
+	);
+
+	$http -- make ajax calls
+
+	$http({
+		url : 'url', 
+		method : 'GET'
+	}).success(function(data) {
+
+	}).error(function(xhr){
+
+	})

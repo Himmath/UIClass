@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Singlepage App,ui-Route</title>
+	</head>
+	<body>
+		<div ng-app = 'myApp'>
+			<div>This is header</div>
+			<a ng-href="#/main">main</a>
+			<a ng-href="#/about">about</a>
+			<a href="#/contact">contact</a>
+			<div ui-view></div>
+			<div>This is footer</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+		<script>
+		angular.module('myApp',['ui.router'])
+		angular.module('myApp').config(['$urlRouterProvider','$stateProvider',function ($urlRouterProvider,$stateProvider) {
+			$urlRouterProvider.otherwise('/main');
+
+			$stateProvider
+				.state('main', {
+					url: '/main',
+					controller : 'MainCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				.state('about', {
+					url: '/about',
+					controller : 'AboutCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				.state('contact', {
+					url: '/contact',
+					controller : 'ContactCtrl',
+					template : '<h1>{{heading}}</h1><p>{{message}}</p>'
+				})
+				
+		}])
+		angular.module('myApp').controller('MainCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in Main Controller'
+			$scope.message = 'This meassage in Main Controller'
+		}])
+		angular.module('myApp').controller('AboutCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in About Controller'
+			$scope.message = 'This meassage in About Controller'
+		}])
+		angular.module('myApp').controller('ContactCtrl',['$scope',function ($scope) {
+			$scope.heading = 'This heading in Contact Controller'
+			$scope.message = 'This meassage in Contact Controller'
+		}])
+		</script>
+	</body>
+</html>
