@@ -1,0 +1,62 @@
+What is grunt ?
+
+Grunt is a JavaScript task runner, a tool used to automatically perform frequently used tasks such as minification, compilation, unit testing, linting, etc. It uses a command-line interface to run custom tasks defined in a file (known as a Gruntfile). Grunt was created by Ben Alman and is written in Node.js.
+
+How can you configure tasks in grunt?
+
+configuration for grunt is provided in grunt.js file
+
+grunt.inti - define all tasks configuration
+
+time-grunt -- in order to know how much time specific task time taken to run
+watch - look for file changes and run list of tasks
+connect - server running task
+jshint - syntax checks in javascript file
+jscs - javascript style issuses
+clean - empty a directory
+postcss -adding vendor sepcific styles
+
+wiredep -it automatically wires up your Bower components to your HTML/(S)CSS based on dependencies
+
+ grunt.registerTask - make is available as commands
+ grunt.tasks.run -  runs tasks frequently
+
+ what is bower?
+
+ Keeping track of all these packages and making sure they are up to date (or set to the specific versions need).
+
+Bower can manage components that contain HTML, CSS, JavaScript, fonts or even image files. Bower doesn’t concatenate or minify code or do anything else - it just installs the right versions of the packages you need and their dependencies.
+
+
+bower inti - Interactively create a bower.json file
+
+bower install 
+
+Installs project dependencies recursively.
+
+Project dependencies consist of:
+
+dependencies specified in bower.json of project
+
+bower install moduleName
+
+Using bower install <package> --save will add <package> to your project’s bower.json dependencies array.
+
+using bower install <package> --save-dev will add <package> to your project’s bower.json devDependencies array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

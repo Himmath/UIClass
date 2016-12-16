@@ -1,0 +1,25 @@
+{
+  "name": "class2",
+  "description": "nodewithangular",
+  "main": "index.js",
+  "authors": [
+    "arjun"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Himmath/UIClass",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-mocks": "^1.6.0",
+    "bootstrap": "^3.3.7",
+    "angular-resource": "^1.6.0",
+    "angular-route": "^1.6.0"
+  }
+}

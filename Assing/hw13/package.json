@@ -1,0 +1,30 @@
+{
+  "name": "hw13",
+  "version": "1.0.0",
+  "description": "demo used to npm  and create package.json file",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "npm"
+  ],
+  "author": "arjun",
+  "license": "ISC",
+  "dependencies": {
+    "dust": "^0.3.0",
+    "express": "^4.14.0",
+    "handlebars": "^4.0.6",
+    "kraken-js": "^2.1.0",
+    "loadash": "0.0.1",
+    "lusca": "^1.4.1",
+    "redis": "^2.6.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
